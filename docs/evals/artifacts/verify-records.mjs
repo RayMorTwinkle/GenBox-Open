@@ -11,11 +11,10 @@ function read(name) {
 const input = read("./paste-corpus.json");
 const corpus = JSON.parse(input);
 const sha = createHash("sha256").update(input).digest("hex");
-let runnerSha;
+const runnerSha = createHash("sha256").update(read("./run-paste-eval.mjs")).digest("hex");
 for (const stage of ["backup", "start", "refactor"]) {
   const record = JSON.parse(read("./" + stage + "-paste.json"));
   assert.equal(record.corpusSha256, sha);
-  runnerSha ??= record.runnerSha256;
   assert.equal(record.runnerSha256, runnerSha);
   assert.equal(record.results.length, corpus.length);
   const scores = { all: { pass: 0, total: 0 }, control: { pass: 0, total: 0 }, edge: { pass: 0, total: 0 } };

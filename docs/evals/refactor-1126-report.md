@@ -16,7 +16,7 @@
 
 新实现逐行跟踪代码围栏，按原文偏移提取外包装，只从代码块外采集文档标题。裸文件、自带示例的教程与聊天助手交付的独立网页各有一组对照。没有标题的教程和普通交付说明有时在文本结构上完全相同；这类输入可用上传原文件的入口保持意图。浏览器表单的文本字段还会把 LF 转成 CRLF，因此发布回读取回的讲义在统一换行后相等。[样本与逐条预期](artifacts/paste-corpus.json) · [备份原始返回](artifacts/backup-paste.json) · [动工前原始返回](artifacts/start-paste.json) · [重构原始返回](artifacts/refactor-paste.json)
 
-从开源仓根目录运行以下命令，可独立从逐条结果重算表格。在线主站解析器位于独立维护的主仓。
+从开源仓根目录运行以下命令，可独立从逐条结果重算表格。该命令会同时比对语料与原评测器的 SHA-256。在线主站解析器位于独立维护的主仓。[原评测脚本](artifacts/run-paste-eval.mjs)
 
 ```sh
 node docs/evals/artifacts/verify-records.mjs
