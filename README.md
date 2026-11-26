@@ -2,7 +2,7 @@
 
 把一份 HTML、Markdown 或 SVG 放进本机作品库。你可以把阅读链接交给同一台机器上的浏览器或 Agent，继续修改文件，也可以把某一版固定下来，留给下一次复查。
 
-[打开中文交互展示](docs/index.html) · [查看 Agent Skill](skill/genbox-open/SKILL.md) · [浏览器实拍](docs/evals/artifacts/local-preview.png)
+[打开中文交互展示](docs/index.html) · [查看 Agent Skill](skill/genbox-open/SKILL.md) · [浏览器实拍](docs/evals/artifacts/local-preview.png) · [工程评测](docs/evals/refactor-1126-report.md)
 
 ## 从第一条链接开始
 
@@ -77,7 +77,7 @@ python3 genbox.py send examples/field-notes.md --base-url "$GENBOX_ORIGIN"
 python3 -m unittest discover -s tests -v
 ```
 
-测试使用临时目录和随机回环端口，覆盖更新与恢复后重新打开数据库、并发追加、失败回滚、双端口路由、渲染响应头、SVG、技能安装及托管文本上传的本机契约夹具。托管上传测试在本机执行，线上联调未纳入这次验收。[原始测试输出](docs/evals/artifacts/open-unittest.txt)
+测试使用临时目录和随机回环端口，覆盖更新与恢复后重新打开数据库、并发追加、失败回滚、双端口路由、渲染响应头、SVG、技能安装及托管文本上传的本机契约夹具。另用同一个客户端向备份及重构后的两个本机 GenBox 实例发布示例 Markdown，并通过内容服务回读核对原文件字节。生产站未参与联调。[原始测试输出](docs/evals/artifacts/open-unittest.txt) · [跨仓联调记录](docs/evals/artifacts/refactor-open-client.json)
 
 ## 授权
 

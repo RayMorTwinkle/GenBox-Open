@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta name="description" content="用三个可下载的样本体验 GenBox。了解如何用本地工作台、命令行与 Agent Skill，把一份文件变成可以打开的页面。">
+  <title>GenBox Open · 给页面一封信</title>
+  <link rel="stylesheet" href="assets/showcase.css">
+  <script defer src="assets/specimens.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="mast wrap">
+    <a class="brand" href="#main" aria-label="GenBox Open 首页"><i aria-hidden="true"></i>GenBox <small>Open</small></a>
+    <nav aria-label="页面导航"><a href="#specimen">样本台</a><a href="#workbench">本地发布</a><a href="#film">短片</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="specimen" aria-labelledby="hero-title">
+      <div class="intro">
+        <p class="kicker"><span></span> 可交互的文件样本</p>
+        <h1 id="hero-title">把作品装进<br><em>一条短链。</em></h1>
+        <p class="lead">写好一份路书，画好一张地图，下一步就该交给读者。GenBox 把 HTML、Markdown 和 SVG 变成打开就能读的页面。</p>
+        <div class="actions"><a class="button primary" href="#workbench">启动本地工作台</a><a class="textlink" href="#film">看发布短片</a></div>
+        <p class="scope">本地生成的链接在这台电脑上打开。需要发给别人时，可通过客户端提交到托管服务。</p>
+      </div>
+      <article class="desk" aria-label="交互式文件样本台">
+        <div class="desk-meta"><b>阅件台</b><span>GENBOX / FILE VIEWER</span></div>
+        <div class="folder">
+          <div class="filebar"><span class="file-icon" aria-hidden="true"></span><span id="filename">ridge.svg</span><button id="toggle-source" type="button" aria-pressed="false">查看源码</button></div>
+          <div class="filebody"><iframe id="preview" title="当前样本的页面预览" sandbox="" referrerpolicy="no-referrer"></iframe><pre id="source" tabindex="0" aria-label="当前样本源文件" hidden><code></code></pre></div>
+        </div>
+        <div class="sample-controls"><div role="group" aria-label="切换样本格式"><button type="button" data-sample="svg" aria-pressed="true">SVG</button><button type="button" data-sample="html" aria-pressed="false">HTML</button><button type="button" data-sample="md" aria-pressed="false">Markdown</button></div><a id="download" download="ridge.svg">下载样本</a></div>
+        <p class="sr" id="sample-status" role="status"></p>
+        <noscript>启用 JavaScript 即可切换格式、查看源码与下载内置样本。</noscript>
+      </article>
+    </section>
+    <section id="workbench" class="workbench">
+      <div class="wrap workgrid">
+        <div>
+          <p class="kicker"><span></span> 本地工作台</p><h2>从一个文件开始。</h2>
+          <p>进入 GenBox-Open 项目目录，用 Python 标准库启动体验。作品和历史版本保存在本机的 SQLite 数据库。</p>
+          <p>在另一个终端发布示例路书，打开返回的本机地址。日后改稿，可以指定同一个短链标识追加版本。</p><p>需要让 Agent 操作时，运行 <code>python3 genbox.py install-skill</code> 安装本地 Skill。</p><a id="repository" class="textlink evidence-link" href="https://github.com/RayMorTwinkle/GenBox-Open" hidden>获取源码与完整使用说明</a>
+        </div>
+        <div class="terminal"><div class="terminal-head"><b>终端</b><span>GenBox-Open /</span></div>
+          <p>终端 A · 启动预览服务</p><code>python3 genbox.py serve</code>
+          <p>终端 B · 发布自带的路书示例</p><code>python3 genbox.py publish examples/field-notes.md</code>
+          <p>打开输出中的阅读链接 · 外层页面端口</p><code>127.0.0.1:4310</code>
+        </div>
+      </div>
+    </section>
+    <section class="story wrap" aria-labelledby="story-title">
+      <p class="kicker"><span></span> 工程手记</p>
+      <div class="story-grid"><div><h2 id="story-title">教程里的网页，<br>应当留在教程里。</h2><p>一篇 Markdown 教程可以包含完整的 HTML 示例。旧版粘贴入口看见完整网页就取出代码块，连同标题一起丢掉了正文。检查发布结果时，格式、标题和全文都要对得上。</p><p>在同一组手写回归用例中，三个字段同时匹配的用例从备份的 <strong>12/25</strong> 增至重构后的 <strong>25/25</strong>。这组样本用于复现具体输入边界。</p><a class="textlink evidence-link" href="evals/refactor-1126-report.md">阅读实验报告与口径</a></div>
+      <div class="spec-note"><span>Markdown / 教学样本</span><pre><code># 路书排版笔记
+
+先在标题旁标出集合地点。
+
+```html
+&lt;html&gt;&lt;title&gt;示例路书&lt;/title&gt;&lt;/html&gt;
+```
+
+读者还需要这一段返程说明。</code></pre><p>预期发布结果：从标题到返程说明的整篇笔记。</p></div></div>
+    </section>
+    <section class="film" id="film"><div class="wrap filmgrid"><div><p class="kicker"><span></span> 产品短片</p><h2>看一份文件<br>怎样抵达读者。</h2><p>从作者手里的文件，到读者打开的页面。中文旁白，内嵌中文字幕。</p></div><video controls preload="metadata" playsinline aria-label="GenBox 中文产品短片" poster="assets/film-poster.webp"><source src="media/promo.mp4" type="video/mp4">当前浏览器无法播放此视频。<a href="media/promo.mp4">下载宣传片</a></video></div></section>
+  </main>
+  <footer class="wrap foot"><a class="brand" href="#main"><i aria-hidden="true"></i>GenBox <small>Open</small></a><span>Ray · 文件分享与本地发布</span></footer>
+</body>
+</html>

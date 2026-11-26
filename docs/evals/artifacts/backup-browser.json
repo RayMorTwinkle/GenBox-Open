@@ -1,0 +1,15 @@
+{
+  "id": "article-full-page",
+  "preview": {
+    "label": "识别为 HTML",
+    "title": "星图"
+  },
+  "lookupStatus": 200,
+  "rawStatus": 200,
+  "title": "星图",
+  "format": "html",
+  "size": 83,
+  "source": "<!DOCTYPE html>\r\n<html><head><title>星图</title></head><body>北斗</body></html>",
+  "exactBytes": false,
+  "equalIgnoringLineEndings": false
+}

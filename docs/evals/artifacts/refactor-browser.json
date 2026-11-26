@@ -1,0 +1,15 @@
+{
+  "id": "article-full-page",
+  "preview": {
+    "label": "识别为 Markdown",
+    "title": "星座课"
+  },
+  "lookupStatus": 200,
+  "rawStatus": 200,
+  "title": "星座课",
+  "format": "md",
+  "size": 162,
+  "source": "# 星座课\r\n\r\n先认识星座。\r\n\r\n```html\r\n<!DOCTYPE html>\r\n<html><head><title>星图</title></head><body>北斗</body></html>\r\n```\r\n\r\n练习：改写页面。",
+  "exactBytes": false,
+  "equalIgnoringLineEndings": true
+}

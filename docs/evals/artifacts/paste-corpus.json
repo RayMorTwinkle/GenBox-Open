@@ -1,0 +1,244 @@
+[
+  {
+    "id": "whitespace",
+    "group": "control",
+    "input": " \n\t ",
+    "expected": null
+  },
+  {
+    "id": "raw-html",
+    "group": "control",
+    "input": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "html-envelope",
+    "group": "control",
+    "input": "```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "conversational-html",
+    "group": "control",
+    "input": "下面是完整的页面。\n\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```\n\n保存为 index.html。",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "raw-svg",
+    "group": "control",
+    "input": "<?xml version=\"1.0\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"><title>折线图</title></svg>",
+    "expected": {
+      "format": "svg",
+      "text": "<?xml version=\"1.0\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"><title>折线图</title></svg>",
+      "title": "折线图"
+    }
+  },
+  {
+    "id": "svg-envelope",
+    "group": "control",
+    "input": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\"><title>折线图</title></svg>\n```",
+    "expected": {
+      "format": "svg",
+      "text": "<svg xmlns=\"http://www.w3.org/2000/svg\"><title>折线图</title></svg>",
+      "title": "折线图"
+    }
+  },
+  {
+    "id": "bare-fragment",
+    "group": "control",
+    "input": "<section>欢迎</section>",
+    "expected": {
+      "format": "html",
+      "text": "<section>欢迎</section>",
+      "title": null
+    }
+  },
+  {
+    "id": "article-snippet",
+    "group": "control",
+    "input": "# 讲义\n\n```html\n<div>例子</div>\n```\n后记",
+    "expected": {
+      "format": "md",
+      "text": "# 讲义\n\n```html\n<div>例子</div>\n```\n后记",
+      "title": "讲义"
+    }
+  },
+  {
+    "id": "no-label-envelope",
+    "group": "control",
+    "input": "```\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "longest-chat-page",
+    "group": "control",
+    "input": "两个网页版本供选择。\n```html\n<html>简版</html>\n```\n展开版如下。\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "article-full-page",
+    "group": "edge",
+    "input": "# 星座课\n\n先认识星座。\n\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```\n\n练习：改写页面。",
+    "expected": {
+      "format": "md",
+      "text": "# 星座课\n\n先认识星座。\n\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```\n\n练习：改写页面。",
+      "title": "星座课"
+    }
+  },
+  {
+    "id": "article-h2-after-sample",
+    "group": "edge",
+    "input": "下面是我们的课堂笔记。\n\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```\n\n## 练习\n解释星座的命名。",
+    "expected": {
+      "format": "md",
+      "text": "下面是我们的课堂笔记。\n\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```\n\n## 练习\n解释星座的命名。",
+      "title": null
+    }
+  },
+  {
+    "id": "markdown-envelope-with-example",
+    "group": "edge",
+    "input": "````markdown\n# 教案\n\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```\n````",
+    "expected": {
+      "format": "md",
+      "text": "# 教案\n\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n```",
+      "title": "教案"
+    }
+  },
+  {
+    "id": "tilde-envelope",
+    "group": "edge",
+    "input": "~~~html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n~~~",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "long-envelope",
+    "group": "edge",
+    "input": "````html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n````",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "windows-envelope",
+    "group": "edge",
+    "input": "```html\r\n<!DOCTYPE html>\r\n<html><head><title>星图</title></head><body>北斗</body></html>\r\n```",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\r\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "longer-closing-fence",
+    "group": "edge",
+    "input": "```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n````",
+    "expected": {
+      "format": "html",
+      "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+      "title": "星图"
+    }
+  },
+  {
+    "id": "body-leading-trailing-space",
+    "group": "edge",
+    "input": "  # 星座课\n\n正文  \n",
+    "expected": {
+      "format": "md",
+      "text": "  # 星座课\n\n正文  \n",
+      "title": "星座课"
+    }
+  },
+  {
+    "id": "indented-code",
+    "group": "edge",
+    "input": "    range(3)\n",
+    "expected": {
+      "format": "md",
+      "text": "    range(3)\n",
+      "title": null
+    }
+  },
+  {
+    "id": "code-only-lesson",
+    "group": "edge",
+    "input": "```python\n# sample\nprint(42)\n```",
+    "expected": {
+      "format": "md",
+      "text": "```python\n# sample\nprint(42)\n```",
+      "title": null
+    }
+  },
+  {
+    "id": "title-outside-block",
+    "group": "edge",
+    "input": "```python\n# example\n```\n\n# 正题\n\n正文",
+    "expected": {
+      "format": "md",
+      "text": "```python\n# example\n```\n\n# 正题\n\n正文",
+      "title": "正题"
+    }
+  },
+  {
+    "id": "dangling-fence",
+    "group": "edge",
+    "input": "解释在这里。\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n``\n",
+    "expected": {
+      "format": "md",
+      "text": "解释在这里。\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n``\n",
+      "title": null
+    }
+  },
+  {
+    "id": "empty-envelope",
+    "group": "edge",
+    "input": "```html\n\n```",
+    "expected": null
+  },
+  {
+    "id": "closing-line-has-text",
+    "group": "edge",
+    "input": "说明。\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n``` 并非闭合行\n后记",
+    "expected": {
+      "format": "md",
+      "text": "说明。\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n``` 并非闭合行\n后记",
+      "title": null
+    }
+  },
+  {
+    "id": "nested-short-marker",
+    "group": "edge",
+    "input": "~~~~md\n# 围栏\n\n```text\n标题\n```\n~~~~",
+    "expected": {
+      "format": "md",
+      "text": "# 围栏\n\n```text\n标题\n```",
+      "title": "围栏"
+    }
+  }
+]

@@ -1,0 +1,334 @@
+{
+  "revision": "36bcb1a351b40116ef83ef3258a5584bb3258c10",
+  "sourceChangedFromHead": false,
+  "node": "v24.15.0",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "corpusSha256": "84b4da74fdf9e94b71c88e2c2fb852590edd3007eb41ae252486a39d84daaf11",
+  "runnerSha256": "8822dcd39021dd237de3f3f6b033b3d9c00c588406236ac99aaddb373e0ea480",
+  "sourceSha256": "60e8f4e39a62385c4e5b45e428d8e5663a4231cf00c30792451772404f8fe2fe",
+  "summary": {
+    "all": {
+      "pass": 12,
+      "total": 25
+    },
+    "control": {
+      "pass": 10,
+      "total": 10
+    },
+    "edge": {
+      "pass": 2,
+      "total": 15
+    }
+  },
+  "results": [
+    {
+      "id": "whitespace",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": null
+    },
+    {
+      "id": "raw-html",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "html-envelope",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "conversational-html",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "raw-svg",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<?xml version=\"1.0\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"><title>折线图</title></svg>",
+        "format": "svg",
+        "title": "折线图"
+      }
+    },
+    {
+      "id": "svg-envelope",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<svg xmlns=\"http://www.w3.org/2000/svg\"><title>折线图</title></svg>",
+        "format": "svg",
+        "title": "折线图"
+      }
+    },
+    {
+      "id": "bare-fragment",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<section>欢迎</section>",
+        "format": "html",
+        "title": null
+      }
+    },
+    {
+      "id": "article-snippet",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "# 讲义\n\n```html\n<div>例子</div>\n```\n后记",
+        "format": "md",
+        "title": "讲义"
+      }
+    },
+    {
+      "id": "no-label-envelope",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "longest-chat-page",
+      "group": "control",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "article-full-page",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text",
+        "format",
+        "title"
+      ],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "article-h2-after-sample",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text",
+        "format",
+        "title"
+      ],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "markdown-envelope-with-example",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text",
+        "format",
+        "title"
+      ],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "tilde-envelope",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text",
+        "format",
+        "title"
+      ],
+      "actual": {
+        "text": "~~~html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n~~~",
+        "format": "md",
+        "title": null
+      }
+    },
+    {
+      "id": "long-envelope",
+      "group": "edge",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "windows-envelope",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text"
+      ],
+      "actual": {
+        "text": "<!DOCTYPE html>\r\n<html><head><title>星图</title></head><body>北斗</body></html>\r",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "longer-closing-fence",
+      "group": "edge",
+      "pass": true,
+      "mismatch": [],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "body-leading-trailing-space",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text"
+      ],
+      "actual": {
+        "text": "# 星座课\n\n正文",
+        "format": "md",
+        "title": "星座课"
+      }
+    },
+    {
+      "id": "indented-code",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text"
+      ],
+      "actual": {
+        "text": "range(3)",
+        "format": "md",
+        "title": null
+      }
+    },
+    {
+      "id": "code-only-lesson",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text",
+        "title"
+      ],
+      "actual": {
+        "text": "# sample\nprint(42)",
+        "format": "md",
+        "title": "sample"
+      }
+    },
+    {
+      "id": "title-outside-block",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "title"
+      ],
+      "actual": {
+        "text": "```python\n# example\n```\n\n# 正题\n\n正文",
+        "format": "md",
+        "title": "example"
+      }
+    },
+    {
+      "id": "dangling-fence",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text"
+      ],
+      "actual": {
+        "text": "解释在这里。\n```html\n<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>\n``",
+        "format": "md",
+        "title": null
+      }
+    },
+    {
+      "id": "empty-envelope",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "presence"
+      ],
+      "actual": {
+        "text": "",
+        "format": "html",
+        "title": null
+      }
+    },
+    {
+      "id": "closing-line-has-text",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text",
+        "format",
+        "title"
+      ],
+      "actual": {
+        "text": "<!DOCTYPE html>\n<html><head><title>星图</title></head><body>北斗</body></html>",
+        "format": "html",
+        "title": "星图"
+      }
+    },
+    {
+      "id": "nested-short-marker",
+      "group": "edge",
+      "pass": false,
+      "mismatch": [
+        "text"
+      ],
+      "actual": {
+        "text": "~~~~md\n# 围栏\n\n```text\n标题\n```\n~~~~",
+        "format": "md",
+        "title": "围栏"
+      }
+    }
+  ]
+}
