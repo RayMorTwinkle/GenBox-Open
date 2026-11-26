@@ -1,0 +1,12 @@
+test_concurrent_writers_get_distinct_versions (test_workflow.Workflow) ... ok
+test_hosted_client_uses_documented_text_contract (test_workflow.Workflow) ... ok
+test_http_pins_content_version_and_preserves_sandbox_headers (test_workflow.Workflow) ... ok
+test_install_skill_and_use_its_entrypoint_from_another_directory (test_workflow.Workflow) ... ok
+test_invalid_write_rolls_back (test_workflow.Workflow) ... ok
+test_restore_survives_reopen_and_preserves_history (test_workflow.Workflow) ... ok
+test_svg_content_type_and_exact_body (test_workflow.Workflow) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.402s
+
+OK

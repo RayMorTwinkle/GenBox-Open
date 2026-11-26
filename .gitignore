@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.genbox/
+*.sqlite*
+.DS_Store
+.env
+.env.*

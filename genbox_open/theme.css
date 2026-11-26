@@ -1,0 +1,33 @@
+:root{color-scheme:dark;--ground:#12211e;--line:#44524b;--ink:#f3eddc;--muted:#c3c3b3;--gold:#efbb78}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 90% 2%,#294039,transparent 47%),var(--ground);min-height:100vh;color:var(--ink);font:16px/1.6 "Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+header,main{width:min(1100px,90vw);margin:auto}
+header{padding:25px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.brand{display:inline-flex;align-items:center;gap:8px;font-weight:730;font-size:1.35rem;letter-spacing:-.04em}
+.brand span:last-child,.local,.back{color:var(--muted)}
+.mark{width:16px;height:16px;border:2px solid var(--gold);transform:rotate(-12deg);border-radius:3px}
+.local,.tag,.permalink,.back,nav,footer{font-size:.88rem}
+main{padding:40px 0 70px}
+.intro{display:flex;align-items:end;justify-content:space-between;gap:1em;margin:28px 0 24px}
+h1,h2,p{margin:0}
+h1{font-size:clamp(2rem,5vw,3.65rem);line-height:1.18;letter-spacing:-.055em;overflow-wrap:anywhere}
+.intro p{color:var(--muted);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(275px,100%),1fr));gap:16px}
+.card,.empty{border:1px solid var(--line);border-radius:12px;padding:24px;background:#24352f}
+.card{display:flex;flex-direction:column;gap:20px}
+.card:hover,.permalink:hover,nav a:hover{border-color:var(--gold)}
+.card h2{font-size:1.55rem;line-height:1.35;overflow-wrap:anywhere}
+footer{display:flex;gap:8px;justify-content:space-between;margin-top:auto;color:var(--muted);flex-wrap:wrap}
+.tag{display:inline-block;color:var(--gold);font-family:ui-monospace,monospace}
+.intro .tag{margin-bottom:.65rem}
+.empty p{margin:.5em 0;color:var(--muted)}
+pre{overflow:auto}
+.stage{overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff}
+iframe{display:block;border:0;width:100%;height:clamp(340px,56vh,680px);background:#fff;color-scheme:light}
+.permalink,nav a{display:inline-block;padding:7px 13px;border:1px solid var(--line);border-radius:8px;white-space:nowrap}
+nav{display:flex;align-items:baseline;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+nav ul{display:flex;gap:8px;padding:0;list-style:none;flex-wrap:wrap;margin:0}
+[aria-current=page]{color:var(--gold);border-color:var(--gold)}
+@media(max-width:520px){header{padding:16px 0}main{padding-top:18px}.intro{align-items:start;flex-direction:column}.card{padding:18px}}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>海面色谱</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;align-items:center;padding:clamp(28px,8vw,92px);color:#fff;background:linear-gradient(135deg,#173c57,#458b92,#dfb384);font:16px/1.6 "PingFang SC",system-ui,sans-serif}h1{font-size:clamp(38px,9vw,84px);letter-spacing:-.06em;margin:0}button{font:inherit;background:#0c2b3a;color:white;padding:8px 18px;border:1px solid #ffffff70;border-radius:30px}p{font-size:1.15rem}
+</style></head><body><main><h1>海面色谱</h1><p id="phase">晨雾 · 青灰</p><button type="button" id="change">切换光线</button></main>
+<script>
+const phases = [["晨雾 · 青灰","#173c57,#458b92,#dfb384"],["夕照 · 铜金","#432e47,#98685d,#d5a869"],["入夜 · 靛青","#101d36,#2a4661,#516e79"]];
+let current = 0;
+document.getElementById("change").addEventListener("click", () => {
+  current = (current + 1) % phases.length;
+  const [title, colors] = phases[current];
+  document.getElementById("phase").textContent = title;
+  document.body.style.backgroundImage = "linear-gradient(135deg," + colors + ")";
+});
+</script></body></html>
